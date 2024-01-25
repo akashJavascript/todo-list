@@ -1,7 +1,8 @@
 const editTodos = (function () {
-  let todos = [];
+  let todos = {};
   const addProject = function (projectName) {
     todos[projectName] = [];
+    renderElements.renderProjectSidebar();
   };
   const addTodo = function (title, description, dueDate, priority, project) {
     todos[project].push({ title, description, dueDate, priority });
@@ -39,6 +40,10 @@ const editTodos = (function () {
       todo.priority = newPriority;
     }
   };
+  const getProjects = function () {
+    console.log(Object.keys(todos));
+    return Object.keys(todos);
+  }
   return {
     addTodo,
     getTodos,
@@ -46,6 +51,7 @@ const editTodos = (function () {
     getTodo,
     deleteTodo,
     editTodo,
+    getProjects,  
   };
 })();
 
