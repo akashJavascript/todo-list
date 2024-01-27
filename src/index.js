@@ -1,19 +1,17 @@
 import './style.css';
 import { editTodos } from './todoActions.js';
 import { renderElements } from './displayController.js';
+editTodos.addProject('Project1');
+editTodos.addProject('Project2');
+editTodos.addProject('Project3');
+editTodos.addTodo('title1', 'lorem', '1/10/24', 'High', 'Project1');
+editTodos.addTodo('title1', 'lorem', '1/10/24', 'High', 'Project1');
+editTodos.addTodo('title1', 'lorem', '1/10/24', 'High', 'Project1');
 
-editTodos.addProject('project1');
-editTodos.addProject('project2');
-editTodos.addProject('project3');
-editTodos.addTodo(
-  'title1',
-  'description1',
-  'dueDate1',
-  'priority1',
-  'project1'
-);
-
-editTodos.getTodo('project1', 'title1');
+editTodos.getTodo('Project1', 'title1');
 editTodos.getTodos();
 
 editTodos.getProjects();
+renderElements.renderProjectTodos('Project1');
+
+renderElements.renderAddTodoModal();

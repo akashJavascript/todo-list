@@ -1,3 +1,4 @@
+import { renderElements } from './displayController.js';
 const editTodos = (function () {
   let todos = {};
   const addProject = function (projectName) {
@@ -8,11 +9,9 @@ const editTodos = (function () {
     todos[project].push({ title, description, dueDate, priority });
   };
   const getTodos = function () {
-    console.log(todos);
     return todos;
   };
   const getTodo = function (project, title) {
-    console.log(todos[project].find(todo => todo.title === title));
     return todos[project].find(todo => todo.title === title);
   };
   const deleteTodo = function (project, title) {
@@ -41,9 +40,8 @@ const editTodos = (function () {
     }
   };
   const getProjects = function () {
-    console.log(Object.keys(todos));
     return Object.keys(todos);
-  }
+  };
   return {
     addTodo,
     getTodos,
@@ -51,7 +49,7 @@ const editTodos = (function () {
     getTodo,
     deleteTodo,
     editTodo,
-    getProjects,  
+    getProjects,
   };
 })();
 

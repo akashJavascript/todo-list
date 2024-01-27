@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body,
 html {
-  height: 100%;
+ height: 100vh;
   font-family: 'Roboto', sans-serif;
   width: 100%;
 }
@@ -13,19 +17,110 @@ html {
   grid-template-columns: 1fr 3fr;
 }
 .project-sidebar {
-  background-color: #a5f3fc;
+  background-color: #fdba74;
   border-right: 1px solid #e5e5e5;
   padding: 20px;
   display: grid;
-  grid-template-rows: 1fr 10fr;
+  grid-template-rows: minmax(0, 75px) 10fr;
 }
-
 .projects-header {
   font-size: 2rem;
   text-align: center;
   font-weight: 700;
 }
-.project{
+.project {
   font-size: 1.5rem;
   padding: 10px;
+}
+.project:hover {
+  background-color: #fb923c;
+  cursor: pointer;
+}
+.todo {
+  padding: 10px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fde047;
+}
+.todo-delete,
+.todo-edit {
+  padding: 10px;
+  background-color: #fef08a;
+}
+.todo-delete:hover,.todo-edit:hover {
+  cursor: pointer;
+  background-color: #fbbf24;
+}
+.create-todo-btn {
+  position: fixed;
+  display: flex;
+align-items: center;
+border-radius: 50%;
+  justify-content: center;
+  bottom:10px;
+  left:20px;
+  height: 75px;
+  padding:20px;
+  width:75px;
+  color:white;
+  font-weight: 700;
+  font-size: 1.75rem;
+  text-align: center;
+  background-color: #ef4444;
+}
+.create-todo-btn:hover {
+  cursor: pointer;
+  background-color: #f87171;
+}
+.modal{
+  background-color: #f87171;
+  min-height: 300px;
+  width:300px;
+  padding: 10px;
+  display: grid;
+  visibility: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 5px;
+
+  transform: translate(-50%,-50%);
+}
+#description-input{
+  resize: none;
+}
+.input-container{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+} 
+label{
+  margin-bottom: 5px;
+}
+input,select,textarea{
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  border: none;
+}
+.modal-header-container{
+  text-align: center;
+}
+.submit-todo-btn{
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fbbf24;
+  width: 100px;
+  border-radius: 25px;
+  cursor: pointer;
+  border: none;
+}
+.submit-btn:hover{
+  background-color: #fde047;
+}
+.submit-btn-container{
+  display: flex;
+  justify-content: center;
 }
